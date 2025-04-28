@@ -293,7 +293,7 @@ div-fps:
   enabled: true
   java:
     imagePullPolicy: Always
-    image: hmctspublic.azurecr.io/div/fps:latest
+    image: hmctspublic.azurecr.io/div/fps:pr-410
     releaseNameOverride: ${SERVICE_NAME}-div-fps
     ingressHost: fps-${SERVICE_FQDN}
     keyVaults:
