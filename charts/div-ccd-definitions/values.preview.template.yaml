@@ -344,7 +344,7 @@ ccd:
         USER_PROFILE_DB_PASSWORD: hmcts
       ingressHost: ccd-user-profile-api-${SERVICE_FQDN}
       secrets:
-        DATA_STORE_DB_PASSWORD:
+        USER_PROFILE_DB_PASSWORD:
           disabled: true
 
   ccd-data-store-api:
@@ -387,7 +387,7 @@ ccd:
         ELASTIC_SEARCH_HOST: ${SERVICE_NAME}-es-master
       ingressHost: ccd-definition-store-${SERVICE_FQDN}
       secrets:
-        DATA_STORE_DB_PASSWORD:
+        DEFINITION_STORE_DB_PASSWORD:
           disabled: true
 
 
