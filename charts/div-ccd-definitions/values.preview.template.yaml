@@ -341,7 +341,7 @@ ccd:
       environment:
         USER_PROFILE_S2S_AUTHORISED_SERVICES: ccd_admin,ccd_data,ccd_definition,divorce
         USER_PROFILE_DB_HOST: ${SERVICE_NAME}-postgresql
-        USER_PROFILE_DB_PASSWORD: "{{ .Values.postgresql.postgresqlPassword }}"
+        USER_PROFILE_DB_PASSWORD: "{{ .Values.ccd.global.postgresqlPassword }}"
       ingressHost: ccd-user-profile-api-${SERVICE_FQDN}
       secrets:
         USER_PROFILE_DB_PASSWORD:
@@ -354,7 +354,7 @@ ccd:
       imagePullPolicy: Always
       environment:
         DATA_STORE_DB_HOST: ${SERVICE_NAME}-postgresql
-        DATA_STORE_DB_PASSWORD: "{{ .Values.postgresql.postgresqlPassword }}"
+        DATA_STORE_DB_PASSWORD: "{{ .Values.ccd.global.postgresqlPassword }}"
         DATA_STORE_IDAM_KEY: ${DATA_STORE_S2S_KEY}
         DATA_STORE_S2S_AUTHORISED_SERVICES: ccd_gw,ccd_gateway,fpl_case_service,ccd_data,ccd_ps,aac_manage_case_assignment,xui_webapp,ccd_case_document_am_api,divorce_ccd_submission,divorce_frontend
         CCD_S2S_AUTHORISED_SERVICES_CASE_USER_ROLES: aac_manage_case_assignment,fpl_case_service,finrem_case_orchestration,iac,divorce_frontend,civil_service
@@ -382,7 +382,7 @@ ccd:
       disableKeyVaults: true
       environment:
         DEFINITION_STORE_DB_HOST: ${SERVICE_NAME}-postgresql
-        DEFINITION_STORE_DB_PASSWORD: "{{ .Values.postgresql.postgresqlPassword }}"
+        DEFINITION_STORE_DB_PASSWORD: "{{ .Values.ccd.global.postgresqlPassword }}"
         DEFINITION_STORE_IDAM_KEY: ${DEFINITION_STORE_S2S_KEY}
         DEFINITION_STORE_S2S_AUTHORISED_SERVICES: ccd_admin,ccd_data,divorce,ccd_gw,divorce_ccd_submission
         IDAM_USER_URL: https://idam-web-public.aat.platform.hmcts.net
