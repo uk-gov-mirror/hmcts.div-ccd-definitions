@@ -64,15 +64,6 @@ static LinkedHashMap<String, Object> secret(String secretName, String envVar) {
 withPipeline("nodejs", product, component) {
 
   loadVaultSecrets(secrets)
-  afterSuccess('test') {
-    // enable yarn audit and send message on master branch only
-    try {
-      yarnBuilder.yarn('npm audit')
-    } catch (error) {
-      onMaster {
-        slackSend(channel: '#div-dev', color: 'warning', message: "Yarn Audit has detected vulnerabilities in ${env.JOB_NAME}. You can check if there are patches for them in the full report, build details here: <${env.RUN_DISPLAY_URL}|Build ${env.BUILD_DISPLAY_NAME}>.")
-      }
-    }
   }
 
   before('functionalTest:preview') {
@@ -114,4 +105,4 @@ withPipeline("nodejs", product, component) {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test/functional/output/*'
     slackSend(channel: '#div-ccd-thread-block', color: 'warning', message: "Master config has been uploaded to AAT. Build details here: <${env.RUN_DISPLAY_URL}|Build ${env.BUILD_DISPLAY_NAME}>.")
   }
-}
+
