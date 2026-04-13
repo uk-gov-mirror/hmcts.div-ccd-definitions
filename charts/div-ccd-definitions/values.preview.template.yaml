@@ -477,6 +477,9 @@ ccd:
       enabled: false
     postgresConfig:
       maxConnections: "300"
+    setup:
+      databases:
+        - name: "pr-${CHANGE_ID}-postgresql"
 
   elasticsearch:
     nameOverride: ${SERVICE_NAME}-es
