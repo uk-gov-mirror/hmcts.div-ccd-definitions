@@ -332,7 +332,6 @@ ccd:
     ccdCaseManagementWebIngress: case-management-web-${SERVICE_FQDN}
     postgresUsername: hmcts
     postgresPassword: hmcts
-    postgresSecret: postgres
     s2sUrl: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
 
   ccd-user-profile-api:
@@ -341,22 +340,13 @@ ccd:
       disableKeyVaults: true
       environment:
         USER_PROFILE_S2S_AUTHORISED_SERVICES: ccd_admin,ccd_data,ccd_definition,divorce
-        USER_PROFILE_DB_USERNAME: "hmcts"
-        USER_PROFILE_DB_PASSWORD: "hmcts"
       ingressHost: ccd-user-profile-api-${SERVICE_FQDN}
-      secrets:
-        DATA_STORE_DB_PASSWORD:
-          secretRef: "{{ .Values.global.postgresSecret }}"
-          key: PASSWORD
-          disabled: true
 
   ccd-data-store-api:
     java:
       imagePullPolicy: Always
       environment:
         DATA_STORE_DB_HOST: ${SERVICE_NAME}-postgresql
-        DATA_STORE_DB_USERNAME: "hmcts"
-        DATA_STORE_DB_PASSWORD: "hmcts"
         DATA_STORE_IDAM_KEY: ${DATA_STORE_S2S_KEY}
         DATA_STORE_S2S_AUTHORISED_SERVICES: ccd_gw,ccd_gateway,fpl_case_service,ccd_data,ccd_ps,aac_manage_case_assignment,xui_webapp,ccd_case_document_am_api,divorce_ccd_submission,divorce_frontend
         CCD_S2S_AUTHORISED_SERVICES_CASE_USER_ROLES: aac_manage_case_assignment,fpl_case_service,finrem_case_orchestration,iac,divorce_frontend,civil_service
@@ -372,11 +362,6 @@ ccd:
         ELASTIC_SEARCH_DATA_NODES_HOSTS: http://${SERVICE_NAME}-es-master:9200
       disableKeyVaults: true
       ingressHost: ccd-data-store-api-${SERVICE_FQDN}
-      secrets:
-        DATA_STORE_DB_PASSWORD:
-          secretRef: "{{ .Values.global.postgresSecret }}"
-          key: PASSWORD
-          disabled: true
 
   ccd-definition-store-api:
     java:
@@ -384,8 +369,6 @@ ccd:
       disableKeyVaults: true
       environment:
         DEFINITION_STORE_DB_HOST: ${SERVICE_NAME}-postgresql
-        DEFINITION_STORE_DB_USERNAME: "hmcts"
-        DEFINITION_STORE_DB_PASSWORD: "hmcts"
         DEFINITION_STORE_IDAM_KEY: ${DEFINITION_STORE_S2S_KEY}
         DEFINITION_STORE_S2S_AUTHORISED_SERVICES: ccd_admin,ccd_data,divorce,ccd_gw,divorce_ccd_submission
         IDAM_USER_URL: https://idam-web-public.aat.platform.hmcts.net
@@ -393,11 +376,6 @@ ccd:
         ELASTIC_SEARCH_ENABLED: true
         ELASTIC_SEARCH_HOST: ${SERVICE_NAME}-es-master
       ingressHost: ccd-definition-store-${SERVICE_FQDN}
-      secrets:
-        DATA_STORE_DB_PASSWORD:
-          secretRef: "{{ .Values.global.postgresSecret }}"
-          key: PASSWORD
-          disabled: true
 
 
   ccd-admin-web:

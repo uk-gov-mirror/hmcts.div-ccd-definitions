@@ -7,7 +7,7 @@ dependencies:
     version: 3.2.0
     repository: 'oci://hmctsprod.azurecr.io/helm'
   - name: ccd
-    version: 9.2.2
+    version: 8.0.29
     repository: 'oci://hmctsprod.azurecr.io/helm'
     tags:
       - divorce-ccd-stack
