@@ -318,6 +318,8 @@ ccd:
       enabled: true
     ras:
       enabled: false
+    smoketests:
+      enabled: false
 
   ingressHost: ${SERVICE_FQDN}
   ingressIP: ${INGRESS_IP}
