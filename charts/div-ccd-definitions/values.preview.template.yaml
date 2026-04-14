@@ -379,6 +379,7 @@ ccd:
       auth:
         username: "hmcts"
         password: "hmcts"
+        existingSecret: ""
 
   ccd-user-profile-api:
     java:
