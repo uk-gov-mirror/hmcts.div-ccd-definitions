@@ -501,6 +501,8 @@ ccd:
       enabled: false
     postgresConfig:
       maxConnections: "300"
+    auth:
+      existingSecret: "postgres"
 
   elasticsearch:
     nameOverride: ${SERVICE_NAME}-es
