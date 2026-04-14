@@ -321,6 +321,9 @@ ccd:
 
   ccpay:
     enabled: false
+    postgresql:
+      tls:
+        enabled: false
     smoketests:
       enabled: false
     smoketestscron:
