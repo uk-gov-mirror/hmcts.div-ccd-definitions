@@ -366,9 +366,6 @@ ccd:
   consulIP: ${CONSUL_LB_IP}
 
   global:
-    postgres:
-      username: "hmcts"
-      password: "hmcts"
     idamApiUrl: https://idam-api.aat.platform.hmcts.net
     idamWebUrl: https://idam-web-public.aat.platform.hmcts.net
     dmStoreUrl: http://dm-store-aat.service.core-compute-aat.internal
@@ -378,6 +375,10 @@ ccd:
     postgresUsername: hmcts
     postgresPassword: hmcts
     s2sUrl: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
+    postgresql:
+      auth:
+        username: "hmcts"
+        password: "hmcts"
 
   ccd-user-profile-api:
     java:
