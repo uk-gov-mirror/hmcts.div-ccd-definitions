@@ -325,6 +325,8 @@ ccd:
       enabled: false
       tls:
         enabled: false
+    containerPorts:
+      postgresql: 5432
     smoketests:
       enabled: false
     smoketestscron:
@@ -340,14 +342,20 @@ ccd:
             enabled: false
             tls:
               enabled: false
+            containerPorts:
+              postgresql: 5432
         postgresql:
           enabled: false
           tls:
             enabled: false
+          containerPorts:
+            postgresql: 5432
       postgresql:
         enabled: false
         tls:
           enabled: false
+        containerPorts:
+          postgresql: 5432
       smoketests:
         enabled: false
       smoketestscron:
