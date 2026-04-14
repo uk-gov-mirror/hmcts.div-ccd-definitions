@@ -502,7 +502,7 @@ ccd:
     postgresConfig:
       maxConnections: "300"
     auth:
-      existingSecret: "postgres"
+      existingSecret: ""
 
   elasticsearch:
     nameOverride: ${SERVICE_NAME}-es
