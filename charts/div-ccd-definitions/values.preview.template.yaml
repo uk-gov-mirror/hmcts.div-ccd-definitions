@@ -326,12 +326,16 @@ ccd:
       enabled: false
     functionaltests:
       enabled: false
+    functionaltestscron:
+      enabled: false
     ccd:
       smoketests:
         enabled: false
       smoketestscron:
         enabled: false
       functionaltests:
+        enabled: false
+      functionaltestscron:
         enabled: false
       draft-store-service:
         enabled: false
@@ -342,6 +346,8 @@ ccd:
             enabled: false
           functionaltests:
             enabled: false
+          functionaltestscron:
+            enabled: false
 
   draft-store-service:
     enabled: false
@@ -351,6 +357,8 @@ ccd:
       smoketestscron:
         enabled: false
       functionaltests:
+        enabled: false
+      functionaltestscron:
         enabled: false
 
   ingressHost: ${SERVICE_FQDN}
