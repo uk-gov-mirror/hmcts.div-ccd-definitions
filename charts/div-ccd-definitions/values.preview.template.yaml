@@ -302,12 +302,6 @@ div-fps:
         secrets:
           - name: AppInsightsInstrumentationKey
 
-postgresql:
-  auth:
-    username: hmcts
-    password: hmcts
-    existingSecret: postgres
-
 ccd:
   ccd:
     definitionImporter:
@@ -384,6 +378,7 @@ ccd:
     s2sUrl: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
     postgresql:
       auth:
+        database: "postgres"
         username: "hmcts"
         password: "hmcts"
         existingSecret: "postgres"
@@ -510,6 +505,7 @@ ccd:
     postgresConfig:
       maxConnections: "300"
     auth:
+      database: "postgres"
       username: "hmcts"
       password: "hmcts"
       existingSecret: "postgres"
