@@ -334,6 +334,10 @@ ccd:
     functionaltestscron:
       enabled: false
     ccd:
+      postgresql:
+        enabled: false
+        tls:
+          enabled: false
       smoketests:
         enabled: false
       smoketestscron:
