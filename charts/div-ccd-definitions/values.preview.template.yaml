@@ -356,6 +356,16 @@ ccd:
             enabled: false
           functionaltestscron:
             enabled: false
+      ccd-data-store-api:
+        java:
+          smoketests:
+            enabled: false
+          smoketestscron:
+            enabled: false
+          functionaltests:
+            enabled: false
+          functionaltestscron:
+            enabled: false
       ccpay:
         ccd:
           postgresql:
@@ -467,6 +477,14 @@ ccd:
         ELASTIC_SEARCH_DATA_NODES_HOSTS: http://${SERVICE_NAME}-es-master:9200
       disableKeyVaults: true
       ingressHost: ccd-data-store-api-${SERVICE_FQDN}
+      smoketests:
+        enabled: false
+      smoketestscron:
+        enabled: false
+      functionaltests:
+        enabled: false
+      functionaltestscron:
+        enabled: false
 
   ccd-definition-store-api:
     java:
