@@ -319,6 +319,7 @@ ccd:
     ras:
       enabled: false
   ccpay:
+    enabled: false
     smoketests:
       enabled: false
     ccd:
@@ -329,6 +330,12 @@ ccd:
         java:
           smoketests:
             enabled: false
+
+  draft-store-service:
+    enabled: false
+    java:
+      smoketests:
+        enabled: false
 
   ingressHost: ${SERVICE_FQDN}
   ingressIP: ${INGRESS_IP}
