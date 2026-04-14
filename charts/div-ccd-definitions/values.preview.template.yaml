@@ -322,19 +322,27 @@ ccd:
     enabled: false
     smoketests:
       enabled: false
+    functionaltests:
+      enabled: false
     ccd:
       smoketests:
+        enabled: false
+      functionaltests:
         enabled: false
       draft-store-service:
         enabled: false
         java:
           smoketests:
             enabled: false
+          functionaltests:
+            enabled: false
 
   draft-store-service:
     enabled: false
     java:
       smoketests:
+        enabled: false
+      functionaltests:
         enabled: false
 
   ingressHost: ${SERVICE_FQDN}
