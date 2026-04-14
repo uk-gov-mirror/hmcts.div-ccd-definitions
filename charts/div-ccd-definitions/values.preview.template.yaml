@@ -504,6 +504,8 @@ ccd:
       enabled: false
     postgresConfig:
       maxConnections: "300"
+    tls:
+      enabled: false
     auth:
       database: "postgres"
       username: "hmcts"
