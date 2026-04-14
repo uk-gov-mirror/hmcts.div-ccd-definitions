@@ -322,10 +322,14 @@ ccd:
     enabled: false
     smoketests:
       enabled: false
+    smoketestscron:
+      enabled: false
     functionaltests:
       enabled: false
     ccd:
       smoketests:
+        enabled: false
+      smoketestscron:
         enabled: false
       functionaltests:
         enabled: false
@@ -334,6 +338,8 @@ ccd:
         java:
           smoketests:
             enabled: false
+          smoketestscron:
+            enabled: false
           functionaltests:
             enabled: false
 
@@ -341,6 +347,8 @@ ccd:
     enabled: false
     java:
       smoketests:
+        enabled: false
+      smoketestscron:
         enabled: false
       functionaltests:
         enabled: false
