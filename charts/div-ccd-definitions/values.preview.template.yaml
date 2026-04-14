@@ -302,6 +302,12 @@ div-fps:
         secrets:
           - name: AppInsightsInstrumentationKey
 
+postgresql:
+  auth:
+    username: hmcts
+    password: hmcts
+    existingSecret: postgres
+
 ccd:
   ccd:
     definitionImporter:
