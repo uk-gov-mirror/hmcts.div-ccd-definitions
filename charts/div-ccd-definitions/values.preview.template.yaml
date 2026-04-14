@@ -340,6 +340,12 @@ ccd:
         java:
           smoketests:
             enabled: false
+          smoketestscron:
+            enabled: false
+          functionaltests:
+            enabled: false
+          functionaltestscron:
+            enabled: false
       ccpay:
         ccd:
           postgresql:
@@ -420,6 +426,12 @@ ccd:
       imagePullPolicy: Always
       disableKeyVaults: true
       smoketests:
+        enabled: false
+      smoketestscron:
+        enabled: false
+      functionaltests:
+        enabled: false
+      functionaltestscron:
         enabled: false
       environment:
         USER_PROFILE_S2S_AUTHORISED_SERVICES: ccd_admin,ccd_data,ccd_definition,divorce
