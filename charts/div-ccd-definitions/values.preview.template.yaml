@@ -318,8 +318,17 @@ ccd:
       enabled: true
     ras:
       enabled: false
+  ccpay:
     smoketests:
       enabled: false
+    ccd:
+      smoketests:
+        enabled: false
+      draft-store-service:
+        enabled: false
+        java:
+          smoketests:
+            enabled: false
 
   ingressHost: ${SERVICE_FQDN}
   ingressIP: ${INGRESS_IP}
@@ -335,11 +344,6 @@ ccd:
     postgresUsername: hmcts
     postgresPassword: hmcts
     s2sUrl: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
-
-  draft-store-service:
-    java:
-      smoketests:
-        enabled: false
 
   ccd-user-profile-api:
     java:
