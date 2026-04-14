@@ -318,6 +318,7 @@ ccd:
       enabled: true
     ras:
       enabled: false
+
   ccpay:
     enabled: false
     smoketests:
@@ -503,6 +504,8 @@ ccd:
     postgresConfig:
       maxConnections: "300"
     auth:
+      username: "hmcts"
+      password: "hmcts"
       existingSecret: ""
 
   elasticsearch:
