@@ -652,6 +652,17 @@ ccd:
     livenessProbe:
       initialDelaySeconds: 90
 
+  payment-api:
+    java:
+      smoketests:
+        enabled: false
+      smoketestscron:
+        enabled: false
+      functionaltests:
+        enabled: false
+      functionaltestscron:
+        enabled: false
+
 aac-manage-case-assignment:
   enabled: true
   java:
