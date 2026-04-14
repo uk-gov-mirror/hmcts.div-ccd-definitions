@@ -380,7 +380,7 @@ ccd:
       auth:
         username: "hmcts"
         password: "hmcts"
-        existingSecret: ""
+        existingSecret: "postgres"
 
   ccd-user-profile-api:
     java:
@@ -506,7 +506,7 @@ ccd:
     auth:
       username: "hmcts"
       password: "hmcts"
-      existingSecret: ""
+      existingSecret: "postgres"
 
   elasticsearch:
     nameOverride: ${SERVICE_NAME}-es
