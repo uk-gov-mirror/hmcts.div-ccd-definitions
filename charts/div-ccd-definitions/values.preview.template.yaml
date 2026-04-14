@@ -334,6 +334,16 @@ ccd:
     functionaltestscron:
       enabled: false
     ccd:
+      ccpay:
+        ccd:
+          postgresql:
+            enabled: false
+            tls:
+              enabled: false
+        postgresql:
+          enabled: false
+          tls:
+            enabled: false
       postgresql:
         enabled: false
         tls:
