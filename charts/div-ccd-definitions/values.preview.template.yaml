@@ -319,113 +319,6 @@ ccd:
     ras:
       enabled: false
 
-
-  dm-store:
-    enabled: false
-    java:
-      secrets: { }
-    blobstorage:
-      enabled: false
-
-  ccpay:
-    enabled: false
-    postgresql:
-      enabled: false
-      tls:
-        enabled: false
-    containerPorts:
-      postgresql: 5432
-    smoketests:
-      enabled: false
-    smoketestscron:
-      enabled: false
-    functionaltests:
-      enabled: false
-    functionaltestscron:
-      enabled: false
-    ccd:
-      ccd-user-profile-api:
-        java:
-          smoketests:
-            enabled: false
-          smoketestscron:
-            enabled: false
-          functionaltests:
-            enabled: false
-          functionaltestscron:
-            enabled: false
-      ccd-definition-store-api:
-        java:
-          smoketests:
-            enabled: false
-          smoketestscron:
-            enabled: false
-          functionaltests:
-            enabled: false
-          functionaltestscron:
-            enabled: false
-      ccd-data-store-api:
-        java:
-          smoketests:
-            enabled: false
-          smoketestscron:
-            enabled: false
-          functionaltests:
-            enabled: false
-          functionaltestscron:
-            enabled: false
-      ccpay:
-        ccd:
-          postgresql:
-            enabled: false
-            tls:
-              enabled: false
-            containerPorts:
-              postgresql: 5432
-        postgresql:
-          enabled: false
-          tls:
-            enabled: false
-          containerPorts:
-            postgresql: 5432
-      postgresql:
-        enabled: false
-        tls:
-          enabled: false
-        containerPorts:
-          postgresql: 5432
-      smoketests:
-        enabled: false
-      smoketestscron:
-        enabled: false
-      functionaltests:
-        enabled: false
-      functionaltestscron:
-        enabled: false
-      draft-store-service:
-        enabled: false
-        java:
-          smoketests:
-            enabled: false
-          smoketestscron:
-            enabled: false
-          functionaltests:
-            enabled: false
-          functionaltestscron:
-            enabled: false
-
-  draft-store-service:
-    enabled: false
-    java:
-      smoketests:
-        enabled: false
-      smoketestscron:
-        enabled: false
-      functionaltests:
-        enabled: false
-      functionaltestscron:
-        enabled: false
-
   ingressHost: ${SERVICE_FQDN}
   ingressIP: ${INGRESS_IP}
   consulIP: ${CONSUL_LB_IP}
@@ -440,27 +333,11 @@ ccd:
     postgresUsername: hmcts
     postgresPassword: hmcts
     s2sUrl: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
-    postgresql:
-      tls:
-        enabled: false
-      auth:
-        database: "postgres"
-        username: "hmcts"
-        password: "hmcts"
-        existingSecret: "postgres"
 
   ccd-user-profile-api:
     java:
       imagePullPolicy: Always
       disableKeyVaults: true
-      smoketests:
-        enabled: false
-      smoketestscron:
-        enabled: false
-      functionaltests:
-        enabled: false
-      functionaltestscron:
-        enabled: false
       environment:
         USER_PROFILE_S2S_AUTHORISED_SERVICES: ccd_admin,ccd_data,ccd_definition,divorce
       ingressHost: ccd-user-profile-api-${SERVICE_FQDN}
@@ -485,14 +362,6 @@ ccd:
         ELASTIC_SEARCH_DATA_NODES_HOSTS: http://${SERVICE_NAME}-es-master:9200
       disableKeyVaults: true
       ingressHost: ccd-data-store-api-${SERVICE_FQDN}
-      smoketests:
-        enabled: false
-      smoketestscron:
-        enabled: false
-      functionaltests:
-        enabled: false
-      functionaltestscron:
-        enabled: false
 
   ccd-definition-store-api:
     java:
@@ -507,14 +376,6 @@ ccd:
         ELASTIC_SEARCH_ENABLED: true
         ELASTIC_SEARCH_HOST: ${SERVICE_NAME}-es-master
       ingressHost: ccd-definition-store-${SERVICE_FQDN}
-      smoketests:
-        enabled: false
-      smoketestscron:
-        enabled: false
-      functionaltests:
-        enabled: false
-      functionaltestscron:
-        enabled: false
 
   ccd-admin-web:
     nodejs:
@@ -593,13 +454,6 @@ ccd:
       enabled: false
     postgresConfig:
       maxConnections: "300"
-    tls:
-      enabled: false
-    auth:
-      database: "postgres"
-      username: "hmcts"
-      password: "hmcts"
-      existingSecret: "postgres"
 
   elasticsearch:
     nameOverride: ${SERVICE_NAME}-es
@@ -659,17 +513,6 @@ ccd:
         mountPath: /usr/share/logstash/files
     livenessProbe:
       initialDelaySeconds: 90
-
-  payment-api:
-    java:
-      smoketests:
-        enabled: false
-      smoketestscron:
-        enabled: false
-      functionaltests:
-        enabled: false
-      functionaltestscron:
-        enabled: false
 
 aac-manage-case-assignment:
   enabled: true
