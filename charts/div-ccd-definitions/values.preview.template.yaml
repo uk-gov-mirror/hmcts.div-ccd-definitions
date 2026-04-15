@@ -473,6 +473,7 @@ ccd:
       userProfileDatabaseName: user-profile
 
   postgresql:
+    enabled: true
     persistence:
       enabled: false
     postgresConfig:
