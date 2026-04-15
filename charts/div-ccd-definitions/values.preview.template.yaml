@@ -319,8 +319,13 @@ ccd:
     ras:
       enabled: false
 
+
   dm-store:
     enabled: false
+    java:
+      secrets: { }
+    blobstorage:
+      enabled: false
 
   ccpay:
     enabled: false
