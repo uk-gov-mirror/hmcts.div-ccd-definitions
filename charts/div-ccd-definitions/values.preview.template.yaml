@@ -319,8 +319,8 @@ ccd:
     ras:
       enabled: false
 
-    dm-store:
-      enabled: false
+  dm-store:
+    enabled: false
 
   ccpay:
     enabled: false
