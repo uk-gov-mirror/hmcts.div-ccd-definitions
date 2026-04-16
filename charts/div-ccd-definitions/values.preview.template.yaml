@@ -456,9 +456,9 @@ ccd:
     flexibleserver: "financial-remedy-preview"
     setup:
       databases:
-        - name: "pr-${CHANGE_ID}-data-store"
-        - name: "pr-${CHANGE_ID}-definition-store"
-        - name: "pr-${CHANGE_ID}-user-profile"
+        - name: "old-divorce-pr-${CHANGE_ID}-data-store"
+        - name: "old-divorce-pr-${CHANGE_ID}-definition-store"
+        - name: "old-divorce-pr-${CHANGE_ID}-user-profile"
 
   elasticsearch:
     nameOverride: ${SERVICE_NAME}-es
