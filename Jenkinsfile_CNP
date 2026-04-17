@@ -66,6 +66,10 @@ withPipeline("nodejs", product, component) {
   loadVaultSecrets(secrets)
   }
 
+  onPR() {
+    env.ENV='preview'
+  }
+
   before('functionalTest:preview') {
     yarnBuilder.yarn('setup')
 
