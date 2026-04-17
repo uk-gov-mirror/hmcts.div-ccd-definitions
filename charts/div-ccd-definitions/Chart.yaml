@@ -63,3 +63,7 @@ dependencies:
     version: 3.0.10
     repository: 'oci://hmctsprod.azurecr.io/helm'
     condition: div-fps.enabled
+  - name: postgresql
+    version: 1.1.1
+    repository: 'oci://hmctsprod.azurecr.io/helm'
+    condition: postgres.enabled
