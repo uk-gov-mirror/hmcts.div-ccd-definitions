@@ -332,7 +332,7 @@ ccd:
     ccdCaseManagementWebIngress: case-management-web-${SERVICE_FQDN}
     postgresHostname: "financial-remedy-preview.postgres.database.azure.com"
     postgresSecret: postgres
-    databaseNamePrefix: "old-divorce-pr-${CHANGE_ID}-"
+    databaseNamePrefix: "pr-${CHANGE_ID}-"
     s2sUrl: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
 
   ccd-user-profile-api:
@@ -456,9 +456,9 @@ ccd:
     flexibleserver: "financial-remedy-preview"
     setup:
       databases:
-        - name: "old-divorce-pr-${CHANGE_ID}-data-store"
-        - name: "old-divorce-pr-${CHANGE_ID}-definition-store"
-        - name: "old-divorce-pr-${CHANGE_ID}-user-profile"
+        - name: "pr-${CHANGE_ID}-data-store"
+        - name: "pr-${CHANGE_ID}-definition-store"
+        - name: "pr-${CHANGE_ID}-user-profile"
 
   elasticsearch:
     nameOverride: ${SERVICE_NAME}-es
