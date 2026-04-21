@@ -61,14 +61,6 @@ static LinkedHashMap<String, Object> secret(String secretName, String envVar) {
   ]
 }
 
-def setPreviewEnvVars() {
-  env.CCD_ADMIN_URL="https://admin-web-div-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
-  echo "CCD_ADMIN_URL is ${env.CCD_ADMIN_URL}"
-  sh """
-    echo "CCD_ADMIN_URL=$CCD_ADMIN_URL"
-  """
-}
-
 withPipeline("nodejs", product, component) {
 
   loadVaultSecrets(secrets)
@@ -76,7 +68,6 @@ withPipeline("nodejs", product, component) {
 
   onPR {
     env.ENV='preview'
-    setPreviewEnvVars()
   }
 
   before('functionalTest:preview') {
@@ -91,9 +82,8 @@ withPipeline("nodejs", product, component) {
       yarnBuilder.yarn('generate-bulk-excel-all')
     }
 
-
-
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
+    env.CCD_ADMIN_URL="https://admin-web-div-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
     env.CCD_WEB_URL="https://case-management-web-div-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net/v2/case/"
     env.IMPORT_PREVIEW=true
   }
