@@ -17,13 +17,18 @@ module.exports = () => {
     },
     createRole(role) {
       this.click('Manage User Roles');
+      this.wait('10');
       this.click('Create User Role');
+      this.wait('10');
       this.fillField('role', role);
+      this.wait('10');
       this.click('Create');
     },
     uploadConfig(path) {
       this.click('Import Case Definition');
+      this.wait('10');
       this.attachFile('file', path);
+      this.wait('10');
       this.click('Submit');
     }
   });
