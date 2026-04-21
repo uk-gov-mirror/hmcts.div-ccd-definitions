@@ -330,7 +330,7 @@ ccd:
     ccdAdminWebIngress: admin-web-${SERVICE_FQDN}
     ccdApiGatewayIngress: gateway-${SERVICE_FQDN}
     ccdCaseManagementWebIngress: case-management-web-${SERVICE_FQDN}
-    postgresHostname: "financial-remedy-preview.postgres.database.azure.com"
+    postgresHostname: "divorce-preview.postgres.database.azure.com"
     postgresSecret: postgres
     databaseNamePrefix: "pr-${CHANGE_ID}-"
     s2sUrl: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
@@ -453,7 +453,7 @@ ccd:
 
   postgresql:
     enabled: true
-    flexibleserver: "financial-remedy-preview"
+    flexibleserver: "divorce-preview"
     setup:
       databases:
         - name: "pr-${CHANGE_ID}-data-store"
