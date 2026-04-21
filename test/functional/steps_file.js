@@ -12,6 +12,7 @@ module.exports = () => {
       this.fillField('username', 'divorce_importer@mailinator.com');
       this.fillField('password', 'Testing1234');
       this.click('Sign in');
+      this.wait('30');
       this.see('Welcome to CCD Admin Web');
     },
     createRole(role) {
