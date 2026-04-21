@@ -14,6 +14,7 @@ Scenario('add all the roles', ({ I }) => {
   I.createRole('caseworker-divorce-pcqextractor');
   I.createRole('caseworker-caa');
   I.click('Manage User Roles');
+  I.wait('10');
   I.see('citizen');
   I.see('caseworker');
   I.see('caseworker-divorce-courtadmin');
