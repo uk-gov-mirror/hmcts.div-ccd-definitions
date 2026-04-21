@@ -64,23 +64,6 @@ static LinkedHashMap<String, Object> secret(String secretName, String envVar) {
 withPipeline("nodejs", product, component) {
 
   loadVaultSecrets(secrets)
-  enableHighLevelDataSetup()
-
-  onPR {
-    env.ENVIRONMENT="preview"
-  }
-  onMaster {
-    env.ENVIRONMENT='aat'
-  }
-}
-
-  before('highleveldatasetup') {
-    yarnBuilder.yarn('setup')
-
-
-    onPR {
-      env.CCD_ADMIN_URL="https://admin-web-div-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
-    }
   }
 
   before('functionalTest:preview') {
@@ -96,10 +79,18 @@ withPipeline("nodejs", product, component) {
     }
 
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/**/xlsx/*.xlsx'
-
+    env.CCD_ADMIN_URL="https://admin-web-div-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net"
     env.CCD_WEB_URL="https://case-management-web-div-ccd-definitions-pr-${CHANGE_ID}.preview.platform.hmcts.net/v2/case/"
     env.IMPORT_PREVIEW=true
+
+    stage('Debug env vars') {
+      sh '''
+      echo "CCD_ADMIN_URL=$CCD_ADMIN_URL"
+    '''
+    }
   }
+
+
 
   before('functionalTest:aat') {
     yarnBuilder.yarn('setup')
