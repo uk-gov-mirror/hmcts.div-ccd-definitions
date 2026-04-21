@@ -12,8 +12,9 @@ module.exports = () => {
       this.fillField('username', 'divorce_importer@mailinator.com');
       this.fillField('password', 'Testing1234');
       this.click('Sign in');
-      this.wait('30');
+      this.wait('10');
       this.see('Welcome to CCD Admin Web');
+      this.wait('10');
     },
     createRole(role) {
       this.click('Manage User Roles');
@@ -23,6 +24,7 @@ module.exports = () => {
       this.fillField('role', role);
       this.wait('10');
       this.click('Create');
+      this.wait('10');
     },
     uploadConfig(path) {
       this.click('Import Case Definition');
@@ -30,6 +32,7 @@ module.exports = () => {
       this.attachFile('file', path);
       this.wait('10');
       this.click('Submit');
+      this.wait('10');
     }
   });
 };
