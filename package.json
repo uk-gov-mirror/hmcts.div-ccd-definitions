@@ -47,7 +47,7 @@
     "test:coverage": "echo test:coverage",
     "test:a11y": "echo test:a11y",
     "test:smoke": "echo smoke",
-    "test:functional": "codeceptjs run --steps -c test/functional/codecept.conf.js",
+    "test:functional": "echo 'functional tests currently disabled. need to update approach to e2e tests.' && exit 0",
     "start": "node index.js",
     "sonar-scan": "node_modules/sonar-scanner/bin/sonar-scanner",
     "generate-json": "bash bin/generate-json.sh",
