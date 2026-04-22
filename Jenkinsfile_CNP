@@ -1,5 +1,12 @@
 #!groovy
 
+properties([
+  pipelineTriggers([
+    [$class: 'GitHubPushTrigger'],
+    cron('8 8 * * 1-5')
+  ])
+])
+
 @Library("Infrastructure")
 
 String product = "div"
@@ -62,6 +69,7 @@ static LinkedHashMap<String, Object> secret(String secretName, String envVar) {
 }
 
 withPipeline("nodejs", product, component) {
+  env.NO_SKIP_IMG_BUILD = 'true'
 
   loadVaultSecrets(secrets)
 
